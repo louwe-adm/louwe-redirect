@@ -41,9 +41,7 @@
 </head>
 <body>
   <div class="box">
-    <div class="spinner"></div>
-    <p>Abrindo LOUWE...</p>
-    <a class="fallback" id="fallback" href="#">Toque aqui se não abrir automaticamente</a>
+    <a class="fallback" id="fallback" href="#" style="display:none;">Toque aqui se não abrir automaticamente</a>
   </div>
 
 <script>
@@ -90,6 +88,11 @@
   } catch (e) {
     go(DESTINATION_URL);
   }
+
+  // Se nada acontecer em 3s, mostra o link manual
+  setTimeout(function () {
+    document.getElementById('fallback').style.display = 'inline-block';
+  }, 3000);
 </script>
 </body>
 </html>
